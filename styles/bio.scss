@@ -1,0 +1,46 @@
+/**Partials & Mixins**/
+
+/**Element Modifiers**/
+html {
+    font-family: Verdana;
+}
+h1 {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+}
+h2 {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+}
+h3 {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 600;
+}
+p {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+}
+
+/**Class Modifiers**/
+.header__box {
+    width: 100%;
+    background-color: #323232;
+}
+.nav__item {
+    color: #AFAFAF;
+    
+    &--active {
+        color: #FFFFFF;
+        font-weight: bold;
+        border-bottom:#FFFFFF;
+    }
+}
+.hero {
+    background-image: url("../Assets/Images/hero-bio.jpg");
+    background-position: center;
+    background-size: cover;
+}
