@@ -1,0 +1,139 @@
+/**Partials: Fonts**/
+@font-face {
+  font-family: "AvenirNext";
+  src: url("../Assets/Font/AvenirNextLTPro-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AvenirNext";
+  src: url("../Assets/Font/AvenirNextLTPro-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AvenirNext";
+  src: url("../Assets/Font/AvenirNextLTPro-Demi.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+/**Partials: Colors**/
+/**Partials & Mixins**/
+/** Variables**/
+/**Element Modifiers**/
+/**Font Rules**/
+html {
+  font-family: "AvenirNext";
+}
+
+@media screen {
+  h1 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 60px;
+    line-height: 68px;
+  }
+}
+
+@media screen {
+  h2 {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+  }
+}
+@media screen and (min-width: 768px) {
+  h2 {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+@media screen {
+  h3 {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 600;
+  }
+}
+@media screen and (min-width: 768px) {
+  h3 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+@media screen {
+  p {
+    font-size: 13px;
+    line-height: 18px;
+  }
+}
+@media screen and (min-width: 768px) {
+  p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+footer {
+  background-color: #323232;
+  color: #FFFFFF;
+}
+
+/**Class Modifiers**/
+.header__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 20% vh;
+  padding: 16px;
+  background-color: #323232;
+}
+
+.nav__title {
+  width: 100em;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.nav__item {
+  color: #FAFAFA;
+  padding: 0 48px;
+}
+.nav__item--active {
+  color: #FFFFFF;
+  font-weight: bold;
+  border-bottom: #FFFFFF;
+}
+
+.hero {
+  background-color: #323232;
+  opacity: 50%;
+  z-index: 0;
+  background-image: url("../Assets/Images/hero-bio.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 240px;
+}
+
+.hero__title {
+  color: #FFFFFF;
+  padding-top: 120px;
+  z-index: 2;
+}
+
+/**Footer**/
+/**Media Queries
+@media (min-width: $tabletBreakpoint) {
+
+}
+@media (min-width: $desktopBreakpoint) {
+
+}**//*# sourceMappingURL=bio.css.map */

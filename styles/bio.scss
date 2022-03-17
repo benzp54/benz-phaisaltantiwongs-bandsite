@@ -1,46 +1,130 @@
 /**Partials & Mixins**/
+@use './partials/fonts';
+@use './partials/colors';
+
+@mixin hero__overlay($overcolor) {
+    background-color: $overcolor;
+    opacity: 50%;
+    z-index: 0;
+}
+@mixin mobile {
+    @media screen {
+        @content;
+    }
+}
+@mixin tablet {
+    @media screen and (min-width: $tabletBreakpoint) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media screen and (min-width: $desktopBreakpoint) {
+        @content;
+    }
+}
+
+/** Variables**/
+
+$tabletBreakpoint: 768px;
+$desktopBreakpoint: 1280px;
 
 /**Element Modifiers**/
+    /**Font Rules**/
 html {
-    font-family: Verdana;
+    font-family: 'AvenirNext';
 }
 h1 {
+    @include mobile {
     font-size: 24px;
     line-height: 32px;
-    font-weight: 700;
+    }
+    @include tablet {
+    font-size: 60px;
+    line-height: 68px;
+    }
 }
 h2 {
+    @include mobile {
     font-size: 24px;
     line-height: 32px;
     font-weight: 700;
+    }
+    @include tablet {
+    font-size: 36px;
+    line-height: 44px;
+    }
 }
 h3 {
+    @include mobile {
     font-size: 14px;
     line-height: 22px;
     font-weight: 600;
+    }
+    @include tablet {
+    font-size: 24px;
+    line-height: 32px;
+    }
 }
 p {
+    @include mobile {
     font-size: 13px;
     line-height: 18px;
-    font-weight: 400;
+    }
+    @include tablet {
+    font-size: 14px;
+    line-height: 22px;
+    }
+}
+
+footer {
+    background-color: colors.$BandSite-Black;
+    color: colors.$White;
 }
 
 /**Class Modifiers**/
 .header__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     width: 100%;
-    background-color: #323232;
+    height: 20%vh;
+    padding: 16px;
+    background-color: colors.$BandSite-Black;
+}
+.nav__title {
+    width: 100em;
+    text-align: center;
+    color: colors.$White;
 }
 .nav__item {
-    color: #AFAFAF;
+    color: colors.$Alabaster;
+    padding: 0 48px;
     
     &--active {
-        color: #FFFFFF;
+        color: colors.$White;
         font-weight: bold;
-        border-bottom:#FFFFFF;
+        border-bottom: colors.$White;
     }
 }
 .hero {
+    @include hero__overlay(colors.$BandSite-Black);
     background-image: url("../Assets/Images/hero-bio.jpg");
     background-position: center;
     background-size: cover;
+    height: 240px;
 }
+.hero__title {
+    color: colors.$White;
+    padding-top: 120px;
+    z-index: 2;
+}
+    /**Footer**/
+
+/**Media Queries
+@media (min-width: $tabletBreakpoint) {
+
+}
+@media (min-width: $desktopBreakpoint) {
+
+}**/
