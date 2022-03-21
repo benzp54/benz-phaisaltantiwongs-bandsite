@@ -37,10 +37,12 @@ h1 {
     @include mobile {
     font-size: 24px;
     line-height: 32px;
+    font-weight: 700;
     }
     @include tablet {
     font-size: 60px;
     line-height: 68px;
+    margin-left: 36px;
     }
 }
 h2 {
@@ -48,10 +50,12 @@ h2 {
     font-size: 24px;
     line-height: 32px;
     font-weight: 700;
+    margin: 24px 0 16px 0;
     }
     @include tablet {
     font-size: 36px;
     line-height: 44px;
+    margin: 48px 0 36px 0;
     }
 }
 h3 {
@@ -63,6 +67,7 @@ h3 {
     @include tablet {
     font-size: 24px;
     line-height: 32px;
+    margin: 48px 36px 16px 36px;
     }
 }
 p {
@@ -79,6 +84,15 @@ p {
 footer {
     background-color: colors.$BandSite-Black;
     color: colors.$White;
+    padding: 16px;
+
+    @include tablet {
+        padding: 0 36px 36px 36px;
+    }
+}
+img {
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 /**Class Modifiers**/
@@ -89,42 +103,151 @@ footer {
     flex-wrap: wrap;
     width: 100%;
     height: 20%vh;
-    padding: 16px;
+    padding-top: 16px;
     background-color: colors.$BandSite-Black;
+    
+    @include tablet {
+        justify-content: flex-start;
+    }
 }
 .nav__title {
-    width: 100em;
+    width: 100%;
     text-align: center;
+
+    @include tablet {
+        width: fit-content;
+        font-size: 24;
+        margin: 16px 36px;
+    }
+}
+.nav__link {
     color: colors.$White;
+    text-decoration: none;
 }
 .nav__item {
     color: colors.$Alabaster;
-    padding: 0 48px;
+    text-align: center;
+    width: 50%;
     
     &--active {
         color: colors.$White;
         font-weight: bold;
-        border-bottom: colors.$White;
+        padding-bottom: 16px;
+        border-bottom: 4px solid colors.$White;
     }
+    @include tablet {
+        width: fit-content;
+        padding: 36px 0;
+        margin: 0 36px;
+    }
+}
+    //Hover state//
+.nav__item hover {
+    background-color: colors.$BandSite-DarkBlack;
 }
 .hero {
     @include hero__overlay(colors.$BandSite-Black);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-image: url("../Assets/Images/hero-bio.jpg");
     background-position: center;
     background-size: cover;
-    height: 240px;
+    height: 60vh;
 }
 .hero__title {
     color: colors.$White;
-    padding-top: 120px;
     z-index: 2;
+    margin-left: 16px;
+
+    @include tablet {
+        margin-left: 36px;
+    }
+}
+.about, .gallery {
+    padding: 0 16px;
+
+    @include tablet {
+        padding: 0 36px;
+    }
+}
+.about__title {
+    margin-left: 16px;
+
+    @include tablet {
+        margin-left: 36px;
+    }
+}
+.about__headliner {
+
+    @include tablet {
+        padding: 0 36px;
+    }
+}
+.about__quote {
+    font-weight: bold;
+}
+.about__bio {
+
+    @include tablet {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 36px;
+    }
+}
+.bio__title {
+    width: 100%;
+}
+.bio__text {
+
+    @include tablet {
+        width: 50%;
+    }
+}
+.gallery {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: colors.$Alabaster;
+    padding-top: 16px;
+}
+.gallery__title {
+    width: 100%;
+}
+
+.gallery__img {
+    margin-bottom: 16px;
+
+    @include tablet {
+        width: 30%;
+    }
 }
     /**Footer**/
-
-/**Media Queries
-@media (min-width: $tabletBreakpoint) {
-
+.footer__flextitle {
+    @include tablet {
+        display: flex;
+        align-items: center;
+    }
 }
-@media (min-width: $desktopBreakpoint) {
+.social__box {
+    display: flex;
 
-}**/
+    @include tablet {
+        align-items: flex-end;
+        padding: 0 36px;
+    }
+}
+.footer__icon {
+    margin-right: 32px;
+}
+.footer__flexinfo {
+    
+    @include tablet {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.footer__rep {
+    font-weight: bold;
+} 
+

@@ -30,12 +30,14 @@ html {
   h1 {
     font-size: 24px;
     line-height: 32px;
+    font-weight: 700;
   }
 }
 @media screen and (min-width: 768px) {
   h1 {
     font-size: 60px;
     line-height: 68px;
+    margin-left: 36px;
   }
 }
 
@@ -44,12 +46,14 @@ html {
     font-size: 24px;
     line-height: 32px;
     font-weight: 700;
+    margin: 24px 0 16px 0;
   }
 }
 @media screen and (min-width: 768px) {
   h2 {
     font-size: 36px;
     line-height: 44px;
+    margin: 48px 0 36px 0;
   }
 }
 
@@ -64,6 +68,7 @@ html {
   h3 {
     font-size: 24px;
     line-height: 32px;
+    margin: 48px 36px 16px 36px;
   }
 }
 
@@ -83,6 +88,17 @@ html {
 footer {
   background-color: #323232;
   color: #FFFFFF;
+  padding: 16px;
+}
+@media screen and (min-width: 768px) {
+  footer {
+    padding: 0 36px 36px 36px;
+  }
+}
+
+img {
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /**Class Modifiers**/
@@ -93,47 +109,179 @@ footer {
   flex-wrap: wrap;
   width: 100%;
   height: 20% vh;
-  padding: 16px;
+  padding-top: 16px;
   background-color: #323232;
+}
+@media screen and (min-width: 768px) {
+  .header__box {
+    justify-content: flex-start;
+  }
 }
 
 .nav__title {
-  width: 100em;
+  width: 100%;
   text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .nav__title {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    font-size: 24;
+    margin: 16px 36px;
+  }
+}
+
+.nav__link {
   color: #FFFFFF;
+  text-decoration: none;
 }
 
 .nav__item {
   color: #FAFAFA;
-  padding: 0 48px;
+  text-align: center;
+  width: 50%;
 }
 .nav__item--active {
   color: #FFFFFF;
   font-weight: bold;
-  border-bottom: #FFFFFF;
+  padding-bottom: 16px;
+  border-bottom: 4px solid #FFFFFF;
+}
+@media screen and (min-width: 768px) {
+  .nav__item {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 36px 0;
+    margin: 0 36px;
+  }
+}
+
+.nav__item hover {
+  background-color: #000000;
 }
 
 .hero {
   background-color: #323232;
   opacity: 50%;
   z-index: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-image: url("../Assets/Images/hero-bio.jpg");
   background-position: center;
   background-size: cover;
-  height: 240px;
+  height: 60vh;
 }
 
 .hero__title {
   color: #FFFFFF;
-  padding-top: 120px;
   z-index: 2;
+  margin-left: 16px;
+}
+@media screen and (min-width: 768px) {
+  .hero__title {
+    margin-left: 36px;
+  }
+}
+
+.about, .gallery {
+  padding: 0 16px;
+}
+@media screen and (min-width: 768px) {
+  .about, .gallery {
+    padding: 0 36px;
+  }
+}
+
+.about__title {
+  margin-left: 16px;
+}
+@media screen and (min-width: 768px) {
+  .about__title {
+    margin-left: 36px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .about__headliner {
+    padding: 0 36px;
+  }
+}
+
+.about__quote {
+  font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+  .about__bio {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 36px;
+  }
+}
+
+.bio__title {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .bio__text {
+    width: 50%;
+  }
+}
+
+.gallery {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: #FAFAFA;
+  padding-top: 16px;
+}
+
+.gallery__title {
+  width: 100%;
+}
+
+.gallery__img {
+  margin-bottom: 16px;
+}
+@media screen and (min-width: 768px) {
+  .gallery__img {
+    width: 30%;
+  }
 }
 
 /**Footer**/
-/**Media Queries
-@media (min-width: $tabletBreakpoint) {
-
+@media screen and (min-width: 768px) {
+  .footer__flextitle {
+    display: flex;
+    align-items: center;
+  }
 }
-@media (min-width: $desktopBreakpoint) {
 
-}**//*# sourceMappingURL=bio.css.map */
+.social__box {
+  display: flex;
+}
+@media screen and (min-width: 768px) {
+  .social__box {
+    align-items: flex-end;
+    padding: 0 36px;
+  }
+}
+
+.footer__icon {
+  margin-right: 32px;
+}
+
+@media screen and (min-width: 768px) {
+  .footer__flexinfo {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.footer__rep {
+  font-weight: bold;
+}/*# sourceMappingURL=bio.css.map */
