@@ -35,28 +35,35 @@ html {
 }
 h1 {
     @include mobile {
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 700;
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 700;
     }
     @include tablet {
-    font-size: 60px;
-    line-height: 68px;
-    margin-left: 36px;
+        font-size: 60px;
+        line-height: 68px;
+        margin-left: 36px;
+    }
+    @include desktop {
+        margin-left: 10%;
+        margin-right: 10%;
     }
 }
 h2 {
     @include mobile {
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 700;
-    margin: 24px 0 16px 0;
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 700;
+        margin: 24px 0 16px 0;
     }
     @include tablet {
-    font-size: 36px;
-    line-height: 44px;
-    margin: 48px 0 36px 0;
+        font-size: 36px;
+        line-height: 44px;
+        margin: 48px 0 36px 0;
     }
+    @include desktop {
+        margin-left: 10%;
+        margin-right: 10%;
 }
 h3 {
     @include mobile {
@@ -69,6 +76,9 @@ h3 {
     line-height: 32px;
     margin: 48px 36px 16px 36px;
     }
+    @include desktop {
+        margin-left: 10%;
+        margin-right: 10%;
 }
 p {
     @include mobile {
@@ -89,6 +99,10 @@ footer {
     @include tablet {
         padding: 0 36px 36px 36px;
     }
+    @include desktop {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
 }
 img {
     max-width: 100%;
@@ -102,12 +116,12 @@ img {
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
-    height: 20%vh;
     padding-top: 16px;
     background-color: colors.$BandSite-Black;
     
     @include tablet {
         justify-content: flex-start;
+        height: 20%;
     }
 }
 .nav__title {
@@ -118,6 +132,10 @@ img {
         width: fit-content;
         font-size: 24;
         margin: 16px 36px;
+    }
+    @include desktop {
+        margin-left: 10%;
+        margin-right: 10%;
     }
 }
 .nav__link {
@@ -140,10 +158,10 @@ img {
         padding: 36px 0;
         margin: 0 36px;
     }
-}
-    //Hover state//
-.nav__item hover {
-    background-color: colors.$BandSite-DarkBlack;
+    @include desktop {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
 }
 .hero {
     @include hero__overlay(colors.$BandSite-Black);
@@ -163,6 +181,9 @@ img {
     @include tablet {
         margin-left: 36px;
     }
+    @include desktop {
+        margin-left: 10%;
+    }
 }
 .about, .gallery {
     padding: 0 16px;
@@ -170,12 +191,19 @@ img {
     @include tablet {
         padding: 0 36px;
     }
+    @include desktop {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
 }
 .about__title {
     margin-left: 16px;
 
     @include tablet {
         margin-left: 36px;
+    }
+    @include desktop {
+        margin-left: 10%;
     }
 }
 .about__headliner {
@@ -193,6 +221,10 @@ img {
         display: flex;
         flex-wrap: wrap;
         padding: 0 36px;
+    }
+    @include desktop {
+        margin-left: 10%;
+        margin-right: 10%;
     }
 }
 .bio__title {
@@ -249,5 +281,4 @@ img {
 }
 .footer__rep {
     font-weight: bold;
-} 
-
+}
