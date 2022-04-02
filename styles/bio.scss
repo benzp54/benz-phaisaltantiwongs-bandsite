@@ -2,16 +2,6 @@
 @use './partials/fonts';
 @use './partials/colors';
 
-@mixin hero__overlay($overcolor) {
-    background-color: $overcolor;
-    opacity: 50%;
-    z-index: 0;
-}
-@mixin mobile {
-    @media screen {
-        @content;
-    }
-}
 @mixin tablet {
     @media screen and (min-width: $tabletBreakpoint) {
         @content;
@@ -32,99 +22,287 @@ $desktopBreakpoint: 1280px;
     /**Font Rules**/
 html {
     font-family: 'AvenirNext';
+    font-size: 13px;
+    color: colors.$BandSite-Black;
+}
+body {
+    width: 100vw;
+    margin: 0;
 }
 h1 {
-    @include mobile {
-    font-size: 24px;
+    font-size: 4.5rem;
     line-height: 32px;
-    }
+    font-weight: 600;
+    
     @include tablet {
-    font-size: 60px;
-    line-height: 68px;
+        font-size: 7.5rem;
+        line-height: 68px;
     }
 }
 h2 {
-    @include mobile {
-    font-size: 24px;
+    font-size: 4.5rem;
     line-height: 32px;
-    font-weight: 700;
-    }
+    font-weight: 600;
+    margin: 4% 0 2% 0;
+
     @include tablet {
-    font-size: 36px;
-    line-height: 44px;
+        line-height: 44px;
+        margin: 48px 0 36px 0;
     }
 }
 h3 {
-    @include mobile {
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 2.5rem;
     font-weight: 600;
-    }
+
     @include tablet {
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 3rem;
     }
 }
 p {
-    @include mobile {
-    font-size: 13px;
-    line-height: 18px;
-    }
-    @include tablet {
-    font-size: 14px;
-    line-height: 22px;
-    }
+    font-size: 2rem;
 }
 
 footer {
     background-color: colors.$BandSite-Black;
     color: colors.$White;
+    padding: 8% 4% 4% 4%;
+
+    @include tablet {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        padding: 4%;
+    }
+    @include desktop {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+img {
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 /**Class Modifiers**/
 .header__box {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     flex-wrap: wrap;
+    height: 20vh;
     width: 100%;
-    height: 20%vh;
-    padding: 16px;
+    padding-top: 5%;
     background-color: colors.$BandSite-Black;
+    
+    @include tablet {
+        justify-content: flex-start;
+        align-items: center;
+        height: 16vh;
+        padding-top: 0
+    }
+    @include desktop {
+        height: 12vh;
+    }
 }
 .nav__title {
-    width: 100em;
+    width: 100%;
     text-align: center;
+
+    @include tablet {
+        width: fit-content;
+        margin: 0 4%;
+    }
+    @include desktop {
+        margin-left: 10%;
+    }
+}
+.bandsite__title {
+    height: 3.5rem;
+
+    @include tablet {
+        height: 2.7em;
+    }
+    @include desktop {
+        height: 1.8em;
+    }
+}
+.nav__link {
     color: colors.$White;
+    text-decoration: none;
 }
 .nav__item {
     color: colors.$Alabaster;
-    padding: 0 48px;
+    font-size: 2.3rem;
+    text-align: center;
+    padding-bottom: 3%;
+    width: 50%;
     
     &--active {
         color: colors.$White;
         font-weight: bold;
-        border-bottom: colors.$White;
+        border-bottom: 7px solid colors.$White;
+    }
+    @include tablet {
+        font-size: 1.7rem;
+        width: fit-content;
+        margin: 3% 4% 0 4%;
+    }
+    @include desktop {
+        margin: 1% 2%;
+        padding: 1.6% 0;
     }
 }
 .hero {
-    @include hero__overlay(colors.$BandSite-Black);
+    position: relative;
     background-image: url("../Assets/Images/hero-bio.jpg");
     background-position: center;
     background-size: cover;
-    height: 240px;
+    height: 100vh;
+}
+.hero__overlay {
+    height: 100%;
+    width: 100%;
+    background-color: colors.$BandSite-Black;
+    opacity: 50%;
 }
 .hero__title {
+    position: absolute;
     color: colors.$White;
-    padding-top: 120px;
-    z-index: 2;
+    top: 40%;
+    width: 100%;
+    transform:translateX(4%);
+
+    @include tablet {
+        transform:translateX(1%);
+    }
+    @include desktop {
+        transform:translateX(10%);
+    }
+}
+.about {
+    padding: 4%;
+
+    @include tablet {
+        padding: 6% 10% 2% 10%;
+    }
+    @include desktop {
+        padding: 6% 15% 2% 15%;
+    }
+}
+.about__title {
+    margin: 10% 0 2% 4%;
+
+    @include tablet {
+        margin: 6% 0 0 4%;
+    }
+    @include desktop {
+        margin-left: 10%;
+    }
+}
+.about__img {
+    width: 100%;
+}
+.about__quote {
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 3.5rem;
+    margin: 3% 0;
+
+    @include tablet {
+        font-size: 3rem;
+    }
+}
+.bio__title {
+    width: 100%;
+    margin-top: 8%;
+}
+.about__bio {
+
+    @include tablet {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}
+.bio__text {
+
+    @include tablet {
+        width: 49%;
+    }
+}
+.gallery {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: colors.$Alabaster;
+    padding: 4%;
+    
+    @include tablet {
+            padding: 6% 10% 2% 10%;
+    }
+}
+.gallery__title {
+    width: 100%;
+    padding-top: 4%;
+
+    @include tablet {
+        padding-top: 0;
+    }
+}
+
+.gallery__img {
+    margin: 3% 0;
+
+    @include tablet {
+        width: 30%;
+    }
 }
     /**Footer**/
-
-/**Media Queries
-@media (min-width: $tabletBreakpoint) {
-
+.footer__title {
+    @include tablet {
+        display: inline-block;
+    }
+    @include desktop {
+        margin-left: 0;
+    }
 }
-@media (min-width: $desktopBreakpoint) {
+.social__box {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 7vh;
+    width: 40%;
+    padding: 4% 0;
 
-}**/
+    @include tablet {
+        width: 18%;
+        padding: 0 4%;
+    }
+}
+.footer__icon {
+    margin-right: 4%;
+    height: 3em;
+}
+.footer__flexinfo {
+    
+    @include tablet {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+.footer__rep {
+    font-weight: 600;
+}
+.logo__link {
+    margin-top: 22%;
+
+    @include tablet {
+        position: absolute;
+        right: 4%;
+        margin-top: 4%;
+    }
+}
+.footer__legal {
+    font-size: 2rem;
+}

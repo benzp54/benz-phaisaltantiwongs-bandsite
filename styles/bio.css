@@ -24,116 +24,352 @@
 /**Font Rules**/
 html {
   font-family: "AvenirNext";
+  font-size: 13px;
+  color: #323232;
 }
 
-@media screen {
-  h1 {
-    font-size: 24px;
-    line-height: 32px;
-  }
+body {
+  width: 100vw;
+  margin: 0;
+}
+
+h1 {
+  font-size: 4.5rem;
+  line-height: 32px;
+  font-weight: 600;
 }
 @media screen and (min-width: 768px) {
   h1 {
-    font-size: 60px;
+    font-size: 7.5rem;
     line-height: 68px;
   }
 }
 
-@media screen {
-  h2 {
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 700;
-  }
+h2 {
+  font-size: 4.5rem;
+  line-height: 32px;
+  font-weight: 600;
+  margin: 4% 0 2% 0;
 }
 @media screen and (min-width: 768px) {
   h2 {
-    font-size: 36px;
     line-height: 44px;
+    margin: 48px 0 36px 0;
   }
 }
 
-@media screen {
-  h3 {
-    font-size: 14px;
-    line-height: 22px;
-    font-weight: 600;
-  }
+h3 {
+  font-size: 2.5rem;
+  font-weight: 600;
 }
 @media screen and (min-width: 768px) {
   h3 {
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 3rem;
   }
 }
 
-@media screen {
-  p {
-    font-size: 13px;
-    line-height: 18px;
-  }
-}
-@media screen and (min-width: 768px) {
-  p {
-    font-size: 14px;
-    line-height: 22px;
-  }
+p {
+  font-size: 2rem;
 }
 
 footer {
   background-color: #323232;
   color: #FFFFFF;
+  padding: 8% 4% 4% 4%;
+}
+@media screen and (min-width: 768px) {
+  footer {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 4%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  footer {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+
+img {
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /**Class Modifiers**/
 .header__box {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   flex-wrap: wrap;
+  height: 20vh;
   width: 100%;
-  height: 20% vh;
-  padding: 16px;
+  padding-top: 5%;
   background-color: #323232;
+}
+@media screen and (min-width: 768px) {
+  .header__box {
+    justify-content: flex-start;
+    align-items: center;
+    height: 16vh;
+    padding-top: 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .header__box {
+    height: 12vh;
+  }
 }
 
 .nav__title {
-  width: 100em;
+  width: 100%;
   text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .nav__title {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 4%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .nav__title {
+    margin-left: 10%;
+  }
+}
+
+.bandsite__title {
+  height: 3.5rem;
+}
+@media screen and (min-width: 768px) {
+  .bandsite__title {
+    height: 2.7em;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .bandsite__title {
+    height: 1.8em;
+  }
+}
+
+.nav__link {
   color: #FFFFFF;
+  text-decoration: none;
 }
 
 .nav__item {
   color: #FAFAFA;
-  padding: 0 48px;
+  font-size: 2.3rem;
+  text-align: center;
+  padding-bottom: 3%;
+  width: 50%;
 }
 .nav__item--active {
   color: #FFFFFF;
   font-weight: bold;
-  border-bottom: #FFFFFF;
+  border-bottom: 7px solid #FFFFFF;
+}
+@media screen and (min-width: 768px) {
+  .nav__item {
+    font-size: 1.7rem;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 3% 4% 0 4%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .nav__item {
+    margin: 1% 2%;
+    padding: 1.6% 0;
+  }
 }
 
 .hero {
-  background-color: #323232;
-  opacity: 50%;
-  z-index: 0;
+  position: relative;
   background-image: url("../Assets/Images/hero-bio.jpg");
   background-position: center;
   background-size: cover;
-  height: 240px;
+  height: 100vh;
+}
+
+.hero__overlay {
+  height: 100%;
+  width: 100%;
+  background-color: #323232;
+  opacity: 50%;
 }
 
 .hero__title {
+  position: absolute;
   color: #FFFFFF;
-  padding-top: 120px;
-  z-index: 2;
+  top: 40%;
+  width: 100%;
+  transform: translateX(4%);
+}
+@media screen and (min-width: 768px) {
+  .hero__title {
+    transform: translateX(1%);
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero__title {
+    transform: translateX(10%);
+  }
+}
+
+.about {
+  padding: 4%;
+}
+@media screen and (min-width: 768px) {
+  .about {
+    padding: 6% 10% 2% 10%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .about {
+    padding: 6% 15% 2% 15%;
+  }
+}
+
+.about__title {
+  margin: 10% 0 2% 4%;
+}
+@media screen and (min-width: 768px) {
+  .about__title {
+    margin: 6% 0 0 4%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .about__title {
+    margin-left: 10%;
+  }
+}
+
+.about__img {
+  width: 100%;
+}
+
+.about__quote {
+  font-size: 2.6rem;
+  font-weight: 600;
+  line-height: 3.5rem;
+  margin: 3% 0;
+}
+@media screen and (min-width: 768px) {
+  .about__quote {
+    font-size: 3rem;
+  }
+}
+
+.bio__title {
+  width: 100%;
+  margin-top: 8%;
+}
+
+@media screen and (min-width: 768px) {
+  .about__bio {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .bio__text {
+    width: 49%;
+  }
+}
+
+.gallery {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: #FAFAFA;
+  padding: 4%;
+}
+@media screen and (min-width: 768px) {
+  .gallery {
+    padding: 6% 10% 2% 10%;
+  }
+}
+
+.gallery__title {
+  width: 100%;
+  padding-top: 4%;
+}
+@media screen and (min-width: 768px) {
+  .gallery__title {
+    padding-top: 0;
+  }
+}
+
+.gallery__img {
+  margin: 3% 0;
+}
+@media screen and (min-width: 768px) {
+  .gallery__img {
+    width: 30%;
+  }
 }
 
 /**Footer**/
-/**Media Queries
-@media (min-width: $tabletBreakpoint) {
-
+@media screen and (min-width: 768px) {
+  .footer__title {
+    display: inline-block;
+  }
 }
-@media (min-width: $desktopBreakpoint) {
+@media screen and (min-width: 1280px) {
+  .footer__title {
+    margin-left: 0;
+  }
+}
 
-}**//*# sourceMappingURL=bio.css.map */
+.social__box {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 7vh;
+  width: 40%;
+  padding: 4% 0;
+}
+@media screen and (min-width: 768px) {
+  .social__box {
+    width: 18%;
+    padding: 0 4%;
+  }
+}
+
+.footer__icon {
+  margin-right: 4%;
+  height: 3em;
+}
+
+@media screen and (min-width: 768px) {
+  .footer__flexinfo {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+.footer__rep {
+  font-weight: 600;
+}
+
+.logo__link {
+  margin-top: 22%;
+}
+@media screen and (min-width: 768px) {
+  .logo__link {
+    position: absolute;
+    right: 4%;
+    margin-top: 4%;
+  }
+}
+
+.footer__legal {
+  font-size: 2rem;
+}/*# sourceMappingURL=bio.css.map */
