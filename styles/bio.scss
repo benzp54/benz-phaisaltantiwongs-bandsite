@@ -31,7 +31,7 @@ body {
 }
 h1 {
     font-size: 4.5rem;
-    line-height: 32px;
+    line-height: 50px;
     font-weight: 600;
     
     @include tablet {
@@ -59,7 +59,7 @@ h3 {
     }
 }
 p {
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
 footer {
@@ -89,7 +89,7 @@ img {
     justify-content: center;
     align-items: flex-end;
     flex-wrap: wrap;
-    height: 20vh;
+    height: 12vh;
     width: 100%;
     padding-top: 5%;
     background-color: colors.$BandSite-Black;
@@ -142,6 +142,10 @@ img {
         font-weight: bold;
         border-bottom: 7px solid colors.$White;
     }
+    &--inactive {
+        text-decoration: none;
+        color: colors.$Alabaster;
+    }
     @include tablet {
         font-size: 1.7rem;
         width: fit-content;
@@ -157,7 +161,11 @@ img {
     background-image: url("../Assets/Images/hero-bio.jpg");
     background-position: center;
     background-size: cover;
-    height: 100vh;
+    height: 40vh;
+
+    @include tablet {
+        height: 100vh;
+    }
 }
 .hero__overlay {
     height: 100%;
@@ -307,4 +315,38 @@ img {
 }
 .footer__legal {
     font-size: 2rem;
+}
+
+//Comments Section
+.comments {
+
+    &__title {
+        margin-left: 4%;
+    }
+    &__container {
+        display: flex;
+        margin-left: 4%;
+    }
+    &__avatar {
+        width: 15%;
+    }
+    &__item {
+        display: flex;
+        margin-left: 4%;
+    }
+}
+.img__avatar {
+    border-radius: 50%;
+    object-fit: cover;
+}
+.btn__comment {
+    display: block;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    background-color: colors.$BandSite-Black;
+    height: 80px;
+    width: 500px;
+    border-radius: 15px;
+    margin: 4%;
 }

@@ -17,7 +17,9 @@
                 </a>
             </div>
             <div class="nav__item nav__item--active">Biography</div>
-            <div class="nav__item">Shows</div>
+            <div class="nav__item">
+                <a class = "nav__item--inactive" href="./pages/shows.html" title="BANDSITE: Shows">
+                Shows</a></div>
         </header>
 
         <main>
@@ -60,10 +62,29 @@
 
             <!--Comments Section-->
             <section class="comments">
-                <h2>Join the Conversation</h2>
+            <h2 class="comments__title">Join the Conversation</h2>
+            <div class="comments__container">
+                <div class="comments__avatar">
+                    <img class="img__avatar" src="./Assets/Images/Mohan-muruge.jpg" alt="User Avatar">
+                </div>
+                <div class="comments__new">
+                    <form id="comments__form">
+                        <p>NAME</p>
+                        <input type="text" id="newName" name="userName" placeholder="Enter your name">
+                        <p> COMMENT</p>
+                        <input type="text" id="newComment" name="userComment" placeholder="Add a new comment">
+                        <button id="btn__comment" type="submit">COMMENT</button>
+                    </form> 
+            </div>
+            <!--Insert comments from JavaScript-->
+            <div class="comments__list">
+                <div class="comments__item">
+                </div>
+            </div>
+                </div>
             </section>
         </main>
-        
+
         <footer>
             <h2 class="footer__title">Get in Touch</h2>
             <div class="social__box">
@@ -109,5 +130,6 @@
             </div>
                     <p class="footer__legal">Copyright The Bees Knees @ 2021 All Rights Reserved</p>
         </footer>
+        <script src="./scripts/index.js" type="JavaScript"></script>
     </body>
 </html>

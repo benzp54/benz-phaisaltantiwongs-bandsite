@@ -1,0 +1,14 @@
+.artist__album {
+    position: absolute;
+    color: colors.$White;
+    top: 40%;
+    width: 100%;
+    transform:translateX(4%);
+
+    @include tablet {
+        transform:translateX(1%);
+    }
+    @include desktop {
+        transform:translateX(10%);
+    }
+}
