@@ -5,8 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Benz Phaisaltantiwongs">
         <meta name="description" content="Project02: Band Site">
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>  
         <title>Band Site - Home</title>
         <link rel="stylesheet" href="./styles/bio.css">
+        <script src="./scripts/index.js" defer></script>
     </head>
 
     <body>
@@ -68,20 +70,27 @@
                     <img class="img__avatar" src="./Assets/Images/Mohan-muruge.jpg" alt="User Avatar">
                 </div>
                 <div class="comments__new">
-                    <form id="comments__form">
-                        <p>NAME</p>
-                        <input type="text" id="newName" name="userName" placeholder="Enter your name">
-                        <p> COMMENT</p>
-                        <input type="text" id="newComment" name="userComment" placeholder="Add a new comment">
+                    <form id="comments__form"> <!--action="(location to submit values)", method="(get or post)"-->
+                        <div>
+                            <label for="newName">NAME</label>
+                        </div>
+                        <div>
+                            <input type="text" id="newName" name="userName" placeholder="Enter your name" required>
+                        </div>
+                        <div>
+                            <label for="newComment"> COMMENT</label>
+                        </div>
+                        <div>
+                            <textarea id="newComment" name="userComment" placeholder="Add a new comment" required></textarea>
+                        </div>
                         <button id="btn__comment" type="submit">COMMENT</button>
-                    </form> 
-            </div>
-            <!--Insert comments from JavaScript-->
-            <div class="comments__list">
-                <div class="comments__item">
+                    </form>
                 </div>
             </div>
-                </div>
+
+            <div class ="comments__list" id="comments__list">
+                <!--Insert comments from JavaScript-->
+            </div>
             </section>
         </main>
 
@@ -130,6 +139,5 @@
             </div>
                     <p class="footer__legal">Copyright The Bees Knees @ 2021 All Rights Reserved</p>
         </footer>
-        <script src="./scripts/index.js" type="JavaScript"></script>
     </body>
 </html>

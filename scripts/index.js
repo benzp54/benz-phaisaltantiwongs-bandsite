@@ -3,29 +3,61 @@ const commentsLog = [
         id: 1,
         userName: "Miles Acosta",
         userComment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-        timeStamp: "12/20/2020",
+        timeStamp: "12/20/2020"
     },
     {
         id: 2,
         userName: "Emilie Beach",
         userComment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-        timeStamp: "01/09/2021",
+        timeStamp: "01/09/2021"
     },
     {
         id: 3,
-        userName = "Conner Walton",
-        userComment = "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
+        userName: "Conner Walton",
+        userComment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
         timeStamp: "02/17/2021"
     },
 ];
 
-//Button handler: Need to prevent page refresh upon click
+/**Using axios to communicate with the API
+const pKey = axios.get('https://project-1-api.herokuapp.com/register');
+    pKey.then(result => {
+        console.log(result);
+    });
+    pKey.catch(error => {
+        console.log(error);
+    });**/
+    
+//
+const drawComments = () => {
+    const commentsList = document.getElementById('comments__list');
+    
+    for (let i = 0; i < commentsLog.length; i++) {
+        let commentObject = commentsLog[i];
+        let commentItem = document.createElement('div');
+
+        let nameNode = document.createElement('p');
+        let commentNode = document.createElement('p');
+
+        nameNode.textContent = commentObject.userName;
+        commentNode.textContent = commentObject.userComment;
+
+        commentItem.appendChild(nameNode);
+        commentItem.appendChild(commentNode);
+
+        commentsList.appendChild(commentItem);
+        console.log(commentObject);
+    };
+};
+drawComments();
+
+//Button handler: To prevent page refresh upon click
 function buttonHandler() {
-    const commentsForm = document.getElementById('comments__form');
-    commentsForm.addEventListener('submit', e => {
+    const commentsForm = document.getElementById("comments__form");
+    commentsForm.addEventListener("submit", e => {
     e.preventDefault();
     });
-    console.log('button clicked');
+    console.log("button clicked");
     /* addComment ();
     */
 };
@@ -78,3 +110,4 @@ let displayComment = () => {
 }
 
 //You must have a function called displayComment() that takes in one comment object as a parameter and displays it on the page using JavaScript DOM manipulation.*/
+
