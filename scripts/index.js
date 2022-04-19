@@ -19,23 +19,27 @@ const commentsLog = [
     },
 ];
 
-/**Using axios to communicate with the API
-const pKey = axios.get('https://project-1-api.herokuapp.com/register');
-    pKey.then(result => {
-        console.log(result);
+//Using axios to communicate with the API
+const pGet = axios.get('https://project-1-api.herokuapp.com/register');
+    pGet.then(res => {
+        const pKey = res.data;
+        console.log(pKey);
     });
-    pKey.catch(error => {
+
+    pGet.catch(error => {
         console.log(error);
-    });**/
-    
-//
+    });
+
 const drawComments = () => {
     const commentsList = document.getElementById('comments__list');
     
     for (let i = 0; i < commentsLog.length; i++) {
         let commentObject = commentsLog[i];
         let commentItem = document.createElement('div');
+        /*commentItem.classList.add('comments__container');
 
+        let avatarNode = document.createElement('div')
+        avatarNode.classList.add('img__avatar')*/
         let nameNode = document.createElement('p');
         let commentNode = document.createElement('p');
 
@@ -46,7 +50,6 @@ const drawComments = () => {
         commentItem.appendChild(commentNode);
 
         commentsList.appendChild(commentItem);
-        console.log(commentObject);
     };
 };
 drawComments();
