@@ -30,55 +30,55 @@ const drawComments = () => {
     for (let i = 0; i < commentsLog.length; i++) {
         let commentObject = commentsLog[i];
         let commentItem = document.createElement('div');
-        /*commentItem.classList.add('comments__container');
+        let avatarNode = document.createElement('div');
+        let commentContent = document.createElement('div');
+        
 
-        let avatarNode = document.createElement('div')
-        avatarNode.classList.add('img__avatar')*/
         let nameNode = document.createElement('span');
         let timeNode = document.createElement('span')
         let commentNode = document.createElement('p');
 
+        avatarNode.innerHTML = '<img class="img__avatar" src="./Assets/Images/Mohan-muruge.jpg" alt="User Avatar"></img>'
         nameNode.textContent = commentObject.name;
         timeNode.textContent = commentObject.timestamp;
         commentNode.textContent = commentObject.comment;
 
-        commentItem.appendChild(nameNode);
-        commentItem.appendChild(timeNode);
-        commentItem.appendChild(commentNode);
+        commentItem.classList.add('comments__container');
+        commentContent.classList.add('comments__content');
+        avatarNode.classList.add('comments__userAvatar')
+        nameNode.classList.add('userName');
+        timeNode.classList.add('timestamp');
+        
+        commentItem.appendChild(avatarNode);
+        commentItem.appendChild(commentContent);
+
+        commentContent.appendChild(nameNode);
+        commentContent.appendChild(timeNode);
+        commentContent.appendChild(commentNode);
 
         commentsList.appendChild(commentItem);
     };
 };
 
-//Button handler: To prevent page refresh upon click
-function buttonHandler() {
+//BUTTON - Submit Form
+const btn = document.getElementById('btn__comment');
+
+//Button Handler: To append new comment to the commentsLog array
+function buttonHandler(onClick) {
+    //To prevent page refresh upon click
     const commentsForm = document.getElementById("comments__form");
     commentsForm.addEventListener("submit", e => {
     e.preventDefault();
     });
-    console.log("button clicked");
-    /* addComment ();
-    */
-};
 
-// const btn = document.getElementById("btn__comment")
-// btn.addEventListener('click', buttonHandler);
-
-
-/*Need to capture form data before reset
-    console.log(e.target.userName.value);
-    console.log(e.target.userComment.value);
-    console.log(e.target.timeStamp.value);
-    console.log("form submitted");
-});
-
-//Add function to append new comment to the commentsLog array
-function buttonHandler(onClick) {
-    const newUser = userName;
-    const newComment = userComment;
-    const submitTime = timeStamp;
+    const newUser = userName.value;
+    const newComment = userComment.value;
+    const submitTime = timeStamp.value;
+    console.log(newUser);
     console.log('Clicked!');
 }
+//Add Event Listener
+btn.addEventListener('click', buttonHandler);
 
 //Adding new comment to the commentsLog array and clear field upon click
 let addComment = () => {    

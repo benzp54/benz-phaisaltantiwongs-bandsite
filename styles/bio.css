@@ -384,6 +384,9 @@ img {
   font-size: 2rem;
 }
 
+.comments {
+  margin: 0 4%;
+}
 .comments__form {
   width: 100%;
 }
@@ -391,9 +394,11 @@ img {
   margin: 6% 4%;
 }
 .comments__container {
+  font-size: 2rem;
   display: flex;
   width: 100%;
   margin: 0 4%;
+  border-bottom: 3px solid #E1E1E1;
 }
 .comments__avatar {
   width: 15%;
@@ -410,11 +415,30 @@ img {
   color: #AFAFAF;
   margin: 0 4%;
 }
+.comments__content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 1% 0 0 4%;
+}
+.comments__userAvatar {
+  width: 60%;
+}
 
 .img__avatar {
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.userName {
+  display: inline-block;
+  font-weight: bold;
+}
+
+.timestamp {
+  display: inline-block;
+  color: #AFAFAF;
 }
 
 #newName {

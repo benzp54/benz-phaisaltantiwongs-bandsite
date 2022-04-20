@@ -37,9 +37,18 @@
 
 .hero__shows > * {
   color: #FFFFFF;
-  padding: 0 4%;
+  margin: 0 4%;
 }
 
 .shows {
-  padding: 4%;
+  margin: 4%;
+}
+.shows__container {
+  font-size: 2rem;
+  width: 100%;
+  border-bottom: 3px solid #E1E1E1;
+  margin-top: 4%;
+}
+.shows__label {
+  color: #AFAFAF;
 }/*# sourceMappingURL=shows.css.map */

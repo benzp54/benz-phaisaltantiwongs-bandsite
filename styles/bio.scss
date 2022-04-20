@@ -319,7 +319,7 @@ img {
 
 //Comments Section
 .comments {
-
+    margin: 0 4%;
     &__form {
         width: 100%;
     }
@@ -327,9 +327,11 @@ img {
         margin: 6% 4%;
     }
     &__container {
+        font-size: 2rem;
         display: flex;
         width: 100%;
         margin: 0 4%;
+        border-bottom: 3px solid colors.$Mercury;
     }
     &__avatar {
         width: 15%;
@@ -346,10 +348,27 @@ img {
         color: colors.$Silver;
         margin: 0 4%;
     }
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 1% 0 0 4%;
+    }
+    &__userAvatar {
+        width: 60%;
+    }
 }
 .img__avatar {
     border-radius: 50%;
     object-fit: cover;
+}
+.userName {
+    display: inline-block;
+    font-weight: bold;
+}
+.timestamp {
+    display: inline-block;
+    color: colors.$Silver;
 }
 #newName {
     font-size: 2rem;

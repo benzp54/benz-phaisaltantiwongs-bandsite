@@ -31,16 +31,34 @@ const drawSched = () => {
         let showObject = showArray[i];
         let showItem = document.createElement('div');
 
+        let dateLabel = document.createElement('span');
+        let venueLabel = document.createElement('span');
+        let locationLabel = document.createElement('span');
+
         let dateNode = document.createElement('p');
         let venueNode = document.createElement('p')
         let locationNode = document.createElement('p');
+
+        showItem.classList.add('shows__container');
+        dateLabel.classList.add('shows__label');
+        venueLabel.classList.add('shows__label');
+        locationLabel.classList.add('shows__label');
+
+
+
+        dateLabel.textContent = 'DATE';
+        venueLabel.textContent = 'VENUE';
+        locationLabel.textContent = 'LOCATION';
 
         dateNode.textContent = showObject.date;
         venueNode.textContent = showObject.place;
         locationNode.textContent = showObject.location;
 
+        showItem.appendChild(dateLabel);
         showItem.appendChild(dateNode);
+        showItem.appendChild(venueLabel);
         showItem.appendChild(venueNode);
+        showItem.appendChild(locationLabel);
         showItem.appendChild(locationNode);
 
         showList.appendChild(showItem);

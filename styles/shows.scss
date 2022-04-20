@@ -33,8 +33,18 @@ $desktopBreakpoint: 1280px;
 }
 .hero__shows > * {
     color: colors.$White;
-    padding: 0 4%;
+    margin: 0 4%;
 }
 .shows {
-    padding: 4%;
+    margin: 4%;
+
+    &__container {
+    font-size: 2rem;
+    width: 100%;
+    border-bottom: 3px solid colors.$Mercury;
+    margin-top: 4%;
+    }
+    &__label {
+        color: colors.$Silver;
+    }
 }
