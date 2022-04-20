@@ -5,10 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Benz Phaisaltantiwongs">
         <meta name="description" content="Project02: Band Site">
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>  
         <title>Band Site - Home</title>
         <link rel="stylesheet" href="./styles/bio.css">
-        <script src="./scripts/index.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="./scripts/index.js"></script>
     </head>
 
     <body>
@@ -72,13 +72,13 @@
                 <div class="comments__new">
                     <form id="comments__form"> <!--action="(location to submit values)", method="(get or post)"-->
                         <div>
-                            <label for="newName">NAME</label>
+                            <label class="comments__label" for="newName">NAME</label>
                         </div>
                         <div>
                             <input type="text" id="newName" name="userName" placeholder="Enter your name" required>
                         </div>
                         <div>
-                            <label for="newComment"> COMMENT</label>
+                            <label class="comments__label" for="newComment"> COMMENT</label>
                         </div>
                         <div>
                             <textarea id="newComment" name="userComment" placeholder="Add a new comment" required></textarea>

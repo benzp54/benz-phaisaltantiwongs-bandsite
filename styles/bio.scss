@@ -320,26 +320,57 @@ img {
 //Comments Section
 .comments {
 
+    &__form {
+        width: 100%;
+    }
     &__title {
-        margin-left: 4%;
+        margin: 6% 4%;
     }
     &__container {
         display: flex;
-        margin-left: 4%;
+        width: 100%;
+        margin: 0 4%;
     }
     &__avatar {
         width: 15%;
     }
     &__item {
         display: flex;
-        margin-left: 4%;
+        margin: 0 4%;
+    }
+    &__list {
+        margin: 4%;
+    }
+    &__label {
+        font-size: 2rem;
+        color: colors.$Silver;
+        margin: 0 4%;
     }
 }
 .img__avatar {
     border-radius: 50%;
     object-fit: cover;
 }
-.btn__comment {
+#newName {
+    font-size: 2rem;
+    height: 60px;
+    width: 100%;
+    border-width: 3px;
+    border-color: colors.$Mercury;
+    border-radius: 10px;
+    margin: 2% 4%;
+}
+#newComment {
+    font-family:'AvenirNext';
+    font-size: 2rem;
+    min-height: 200px;
+    width: 100%;
+    border-width: 3px;
+    border-color: colors.$Mercury;
+    border-radius: 10px;
+    margin: 4%;
+}
+#btn__comment {
     display: block;
     color: white;
     font-size: 2.5rem;

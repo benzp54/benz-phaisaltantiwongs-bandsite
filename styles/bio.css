@@ -384,19 +384,31 @@ img {
   font-size: 2rem;
 }
 
+.comments__form {
+  width: 100%;
+}
 .comments__title {
-  margin-left: 4%;
+  margin: 6% 4%;
 }
 .comments__container {
   display: flex;
-  margin-left: 4%;
+  width: 100%;
+  margin: 0 4%;
 }
 .comments__avatar {
   width: 15%;
 }
 .comments__item {
   display: flex;
-  margin-left: 4%;
+  margin: 0 4%;
+}
+.comments__list {
+  margin: 4%;
+}
+.comments__label {
+  font-size: 2rem;
+  color: #AFAFAF;
+  margin: 0 4%;
 }
 
 .img__avatar {
@@ -405,7 +417,28 @@ img {
      object-fit: cover;
 }
 
-.btn__comment {
+#newName {
+  font-size: 2rem;
+  height: 60px;
+  width: 100%;
+  border-width: 3px;
+  border-color: #E1E1E1;
+  border-radius: 10px;
+  margin: 2% 4%;
+}
+
+#newComment {
+  font-family: "AvenirNext";
+  font-size: 2rem;
+  min-height: 200px;
+  width: 100%;
+  border-width: 3px;
+  border-color: #E1E1E1;
+  border-radius: 10px;
+  margin: 4%;
+}
+
+#btn__comment {
   display: block;
   color: white;
   font-size: 2.5rem;

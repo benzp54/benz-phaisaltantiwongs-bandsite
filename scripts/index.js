@@ -1,34 +1,28 @@
-const commentsLog = [
-    {
-        id: 1,
-        userName: "Miles Acosta",
-        userComment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-        timeStamp: "12/20/2020"
-    },
-    {
-        id: 2,
-        userName: "Emilie Beach",
-        userComment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-        timeStamp: "01/09/2021"
-    },
-    {
-        id: 3,
-        userName: "Conner Walton",
-        userComment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-        timeStamp: "02/17/2021"
-    },
-];
+let commentsLog = [];
 
 //Using axios to communicate with the API
 const pGet = axios.get('https://project-1-api.herokuapp.com/register');
     pGet.then(res => {
-        const pKey = res.data;
-        console.log(pKey);
-    });
+        let pKeyHolder = JSON.stringify(res.data);
+        let keyArray = pKeyHolder.split('"');
+        const pKey = keyArray[3];
+
+        //Revisit to apply promise chaining
+        const pComm = axios.get(`https://project-1-api.herokuapp.com/comments?api_key=${pKey}`);
+        pComm.then (res => {
+        const pCommHolder = res.data;
+        commentsLog = pCommHolder;
+        return pCommHolder;
+        })
+
+        .then(res => {
+            drawComments(res)
+        });
 
     pGet.catch(error => {
         console.log(error);
     });
+});
 
 const drawComments = () => {
     const commentsList = document.getElementById('comments__list');
@@ -40,19 +34,21 @@ const drawComments = () => {
 
         let avatarNode = document.createElement('div')
         avatarNode.classList.add('img__avatar')*/
-        let nameNode = document.createElement('p');
+        let nameNode = document.createElement('span');
+        let timeNode = document.createElement('span')
         let commentNode = document.createElement('p');
 
-        nameNode.textContent = commentObject.userName;
-        commentNode.textContent = commentObject.userComment;
+        nameNode.textContent = commentObject.name;
+        timeNode.textContent = commentObject.timestamp;
+        commentNode.textContent = commentObject.comment;
 
         commentItem.appendChild(nameNode);
+        commentItem.appendChild(timeNode);
         commentItem.appendChild(commentNode);
 
         commentsList.appendChild(commentItem);
     };
 };
-drawComments();
 
 //Button handler: To prevent page refresh upon click
 function buttonHandler() {
@@ -65,8 +61,8 @@ function buttonHandler() {
     */
 };
 
-const btn = document.getElementById("btn__comment")
-btn.addEventListener('click', buttonHandler);
+// const btn = document.getElementById("btn__comment")
+// btn.addEventListener('click', buttonHandler);
 
 
 /*Need to capture form data before reset
