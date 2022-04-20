@@ -1,14 +1,40 @@
-.artist__album {
-    position: absolute;
-    color: colors.$White;
-    top: 40%;
-    width: 100%;
-    transform:translateX(4%);
+/**Partials & Mixins**/
+@use './partials/fonts';
+@use './partials/colors';
+
+@mixin tablet {
+    @media screen and (min-width: $tabletBreakpoint) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media screen and (min-width: $desktopBreakpoint) {
+        @content;
+    }
+}
+
+/** Variables**/
+
+$tabletBreakpoint: 768px;
+$desktopBreakpoint: 1280px;
+
+.hero__shows {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url("../Assets/Images/Photo-gallery-3.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 65vh;
 
     @include tablet {
-        transform:translateX(1%);
+        height: 100vh;
     }
-    @include desktop {
-        transform:translateX(10%);
-    }
+}
+.hero__shows > * {
+    color: colors.$White;
+    padding: 0 4%;
+}
+.shows {
+    padding: 4%;
 }

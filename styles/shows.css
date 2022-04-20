@@ -1,0 +1,45 @@
+/**Partials: Fonts**/
+@font-face {
+  font-family: "AvenirNext";
+  src: url("../Assets/Font/AvenirNextLTPro-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AvenirNext";
+  src: url("../Assets/Font/AvenirNextLTPro-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AvenirNext";
+  src: url("../Assets/Font/AvenirNextLTPro-Demi.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+/**Partials: Colors**/
+/**Partials & Mixins**/
+/** Variables**/
+.hero__shows {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url("../Assets/Images/Photo-gallery-3.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 65vh;
+}
+@media screen and (min-width: 768px) {
+  .hero__shows {
+    height: 100vh;
+  }
+}
+
+.hero__shows > * {
+  color: #FFFFFF;
+  padding: 0 4%;
+}
+
+.shows {
+  padding: 4%;
+}/*# sourceMappingURL=shows.css.map */
